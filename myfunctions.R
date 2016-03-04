@@ -51,8 +51,8 @@ hsummary <- function(file){
 }
 
 #assume the nn has 3 layers
-exportNNParams <- function(outputfile, nnParams, numOfInputUnits, numOfHiddenUnits, numOfOutputUnits, testscore){
-	cat(c('#nn\tapplication/x-grib', numOfInputUnits, numOfHiddenUnits, numOfOutputUnits, testscore), file=outputfile, sep='\t')
+exportNNParams <- function(outputfile, nnParams, numOfInputUnits, numOfHiddenUnits, numOfOutputUnits, testscore,mimetype){
+	cat(c('#nn',mimetype, numOfInputUnits, numOfHiddenUnits, numOfOutputUnits, testscore), file=outputfile, sep='\t')
 	cat('\r\n',file=outputfile, append='T')
 	cat(nnParams,file=outputfile, sep='\t', append='T')
 }
